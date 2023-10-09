@@ -11,6 +11,7 @@ package MenuElección;
  */
 
 
+import Ejer5.GrafoDirigidoPonderado;
 import java.util.Scanner;
 
  class Menu {
@@ -51,8 +52,20 @@ import java.util.Scanner;
                     System.out.println("Implementando un árbol AVL...");
                     break;
                 case 5:
-                    // Calcula el camino más corto entre dos nodos en un grafo dirigido ponderado.
-                    System.out.println("Calculando el camino más corto entre dos nodos en un grafo dirigido ponderado...");
+                    
+                    GrafoDirigidoPonderado grafo = new GrafoDirigidoPonderado(5);
+                grafo.agregarArista(0, 1, 10);
+                grafo.agregarArista(0, 2, 3);
+                grafo.agregarArista(1, 2, 1);
+                grafo.agregarArista(1, 3, 2);
+                grafo.agregarArista(2, 1, 4);
+                grafo.agregarArista(2, 3, 8);
+                grafo.agregarArista(2, 4, 2);
+                grafo.agregarArista(3, 4, 7);
+                System.out.print("Ingrese el nodo de inicio: ");
+                int nodoInicio = scanner.nextInt();
+                grafo.dijkstra(nodoInicio);
+                     
                     break;
                 case 6:
                     // Salir
